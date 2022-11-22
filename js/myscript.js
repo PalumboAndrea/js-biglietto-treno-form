@@ -31,8 +31,6 @@ button.addEventListener('click', function(){
     let overDiscount = pricePerKm - (pricePerKm * 0.333);
     let finalPrice = pricePerKm * parseInt(kmToDo.value);
 
-    
-
     if ( parseInt(age.value) < 18){
         console.log( finalPrice = (parseInt(kmToDo.value) * teenDiscount).toFixed(2)); 
     } else if ( parseInt(age.value) >= 65){
