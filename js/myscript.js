@@ -18,8 +18,8 @@
 // e visualizzare il calcolo finale con il prezzo.
 // Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina, sempre rispettando le due cifre decimali.
 
-const kmToDo = document.querySelector('input#km-to-do');
-const age = document.querySelector('input#age');
+const kmToDo = document.getElementById('km-to-do');
+const age = document.getElementById('age');
 let finalPrice = document.querySelector('final-price');
 
 const button = document.querySelector('div.buttons a.btn');
