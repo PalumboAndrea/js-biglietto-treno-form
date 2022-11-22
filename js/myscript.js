@@ -9,17 +9,24 @@
 // va applicato uno sconto del 33.3% per gli over 65.
 
 // MILESTONE 1:
-// Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati), realizziamo le specifiche scritte sopra.
+// Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati), 
+// realizziamo le specifiche scritte sopra.
 // La risposta finale (o output) sarà anch’essa da scrivere in console.
 
 // MILESTONE 2:
-// Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo.
+// Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati 
+// e visualizzare il calcolo finale con il prezzo.
 // Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina, sempre rispettando le due cifre decimali.
 
 const kmToDo = document.querySelector('input#km-to-do');
 const age = document.querySelector('input#age');
+let finalPrice = document.querySelector('final-price');
 
 const button = document.querySelector('div.buttons a.btn');
+
+let pricePerKm = 0.2762;
+let teenDiscount = 0.175;
+let overDiscount = 0.333;
 
 button.addEventListener('click', function(){
     console.log(kmToDo.value);
