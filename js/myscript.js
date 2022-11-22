@@ -20,15 +20,27 @@
 
 const kmToDo = document.getElementById('km-to-do');
 const age = document.getElementById('age');
-let finalPrice = document.querySelector('final-price');
 
 const button = document.querySelector('div.buttons a.btn');
 
-let pricePerKm = 0.2762;
-let teenDiscount = 0.175;
-let overDiscount = 0.333;
+
 
 button.addEventListener('click', function(){
+    let pricePerKm = 0.2762;
+    let teenDiscount = pricePerKm - (pricePerKm * 0.175);
+    let overDiscount = pricePerKm - (pricePerKm * 0.333);
+    let finalPrice = pricePerKm * parseInt(kmToDo.value);
+
     console.log(kmToDo.value);
     console.log(age.value);
+    console.log(finalPrice);
+
+    if ( parseInt(age.value) < 18){
+        console.log( finalPrice = (parseInt(kmToDo.value) * teenDiscount).toFixed(2)); 
+    } else if ( parseInt(age.value) >= 65){
+        console.log( finalPrice = (parseInt(kmToDo.value) * overDiscount).toFixed(2)); 
+    }
+
+
+
 })
