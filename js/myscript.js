@@ -23,6 +23,8 @@ const age = document.getElementById('age');
 
 const button = document.querySelector('div.buttons a.btn');
 
+let outputFinalPrice = document.getElementById('final-price');
+
 
 
 button.addEventListener('click', function(){
@@ -31,12 +33,14 @@ button.addEventListener('click', function(){
     let overDiscount = pricePerKm - (pricePerKm * 0.333);
     let finalPrice = pricePerKm * parseInt(kmToDo.value);
 
-    if ( parseInt(age.value) < 18){
-        console.log( finalPrice = (parseInt(kmToDo.value) * teenDiscount).toFixed(2)); 
-    } else if ( parseInt(age.value) >= 65){
-        console.log( finalPrice = (parseInt(kmToDo.value) * overDiscount).toFixed(2)); 
+    if ( parseInt(age.value) < 18 ){
+        outputFinalPrice.innerHTML = 'Prezzo di un biglietto: ' + (finalPrice = (parseInt(kmToDo.value) * teenDiscount).toFixed(2)) + '&euro;';
+    } if ( parseInt(age.value) >= 65){
+        outputFinalPrice.innerHTML = 'Prezzo di un biglietto: ' + (finalPrice = (parseInt(kmToDo.value) * overDiscount).toFixed(2)) + '&euro;';
+    } if (parseInt(age.value) <0){
+        alert("Inserire valori reali");
     } else {
-        console.log(finalPrice);
+        outputFinalPrice.innerHTML = 'Prezzo di un biglietto: ' + finalPrice + '&euro;';
     }
 
 })
